@@ -2,13 +2,15 @@ BUILD_DIR = ./build
 
 export PATH := $(PATH):$(abspath ./utils)
 
+all: test verilog compile bsp reformat checkformat
+
 test:
 	mill -i __.test
 
 verilog:
 	$(call git_commit, "generate verilog")
 	mkdir -p $(BUILD_DIR)
-	mill -i __.test.runMain Elaborate -td $(BUILD_DIR)
+	mill -i __.runMain Elaborate -td $(BUILD_DIR)
 
 help:
 	mill -i __.test.runMain Elaborate --help

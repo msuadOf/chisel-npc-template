@@ -9,8 +9,12 @@ Chisel Project Template
     ```
 
 1.  Install sbt according to the instructions from [sbt download](https://www.scala-sbt.org/download.html).
+   or mill(recommand in `/usr/local/bin/`):
+    ```shell
+    curl -L https://raw.githubusercontent.com/lefou/millw/0.4.10/millw > mill && chmod +x mill
+    ```
 
-1.  Install Firtool
+2.  Install Firtool
 
     Choose whatever version is being [used in continuous integration](.github/workflows/install-circt/action.yml)
     ```bash
